@@ -33,24 +33,32 @@ class Programas:
     def curtida(self):
         self._curtir += 1
 
+    def imprime(self):
+        print(f"{self._nome} - {self.ano} - {self._curtir} Curtidas")
+
 class Filmes(Programas):
     def __init__(self, nome,ano,duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
+
+    def imprime(self):
+        print(f"{self._nome} - {self.ano} - {self.duracao} Minutos - {self._curtir} Curtidas")
 
 class Series(Programas):
     def __init__(self, nome,ano,temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
+    def imprime(self):
+        print(f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas")
+
 The_Boys = Series("The Boys", 2019, 5)
 The_Boys.curtida()
 
-Rei_Leao= Filmes("Rei Leão", 1994, 94)
-Rei_Leao.curtida()
+A_Odisseia= Filmes("A Odisseia", 2026, 173)
+A_Odisseia.curtida()
 
-filmes_series = [The_Boys, Rei_Leao]
+filmes_series = [The_Boys, A_Odisseia]
 
 for programas in filmes_series:
-    detalhe = programas.duracao if hasattr(programas, 'duracao') else programas.temporadas
-    print(f"{programas._nome} - {programas.ano} - {detalhe}")
+    programas.imprime()
