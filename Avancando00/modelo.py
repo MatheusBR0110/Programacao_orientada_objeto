@@ -52,13 +52,57 @@ class Series(Programas):
     def __str__(self):
         return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
 
+class Playlist:
+    def __init__(self, nomePl, elementos):
+        self.nomePl = nomePl
+        self.elementos = elementos
+
+    def tamanho(self):
+        return len(self.programas)
+
+#Series
 The_Boys = Series("The Boys", 2019, 5)
+Supernatural = Series("Supernatural", 2005, 15)
+
+
+#Filmes
+A_Odisseia = Filmes("A Odisseia", 2026, 173)
+Homem_Aranha = Filmes("Homen-Aranha", 2002, 121)
+
+
+#Curtidas
 The_Boys.curtida()
-
-A_Odisseia= Filmes("A Odisseia", 2026, 173)
+The_Boys.curtida()
+The_Boys.curtida()
+The_Boys.curtida()
+The_Boys.curtida()
+The_Boys.curtida()
+The_Boys.curtida()
 A_Odisseia.curtida()
+A_Odisseia.curtida()
+A_Odisseia.curtida()
+A_Odisseia.curtida()
+A_Odisseia.curtida()
+A_Odisseia.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Supernatural.curtida()
+Homem_Aranha.curtida()
+Homem_Aranha.curtida()
+Homem_Aranha.curtida()
+Homem_Aranha.curtida()
+Homem_Aranha.curtida()
+Homem_Aranha.curtida()
 
-filmes_series = [The_Boys, A_Odisseia]
+filmes_series = [A_Odisseia, Homem_Aranha, The_Boys, Supernatural]
+plFim_de_semana = Playlist("Fim de Semana", filmes_series)
 
-for programas in filmes_series:
+for programas in plFim_de_semana.elementos:
     print(programas)
+
+#nomePl = Nome da Playlist
