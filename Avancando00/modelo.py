@@ -52,13 +52,11 @@ class Series(Programas):
     def __str__(self):
         return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
 
-class Playlist:
+class Playlist(list):
     def __init__(self, nomePl, elementos):
         self.nomePl = nomePl
         self.elementos = elementos
-
-    def tamanho(self):
-        return len(self.programas)
+        super().__init__(elementos)
 
 #Series
 The_Boys = Series("The Boys", 2019, 5)
@@ -102,7 +100,10 @@ Homem_Aranha.curtida()
 filmes_series = [A_Odisseia, Homem_Aranha, The_Boys, Supernatural]
 plFim_de_semana = Playlist("Fim de Semana", filmes_series)
 
-for programas in plFim_de_semana.elementos:
+print(f"Tamanho da Lista: {len(plFim_de_semana)}")
+print(f"Está na Lista?{A_Odisseia in plFim_de_semana}")
+
+for programas in plFim_de_semana:
     print(programas)
 
 #nomePl = Nome da Playlist
