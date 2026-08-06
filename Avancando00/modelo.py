@@ -52,11 +52,19 @@ class Series(Programas):
     def __str__(self):
         return f"{self._nome} - {self.ano} - {self.temporadas} - {self._curtir} Curtidas"
 
-class Playlist(list):
+class Playlist():
     def __init__(self, nomePl, elementos):
         self.nomePl = nomePl
         self.elementos = elementos
-        super().__init__(elementos)
+        self._elementos = elementos
+
+    @property
+    def listagem(self):
+        return self._elementos
+    
+    @property
+    def tamanho(self):
+        return len(self._elementos)
 
 #Series
 The_Boys = Series("The Boys", 2019, 5)
