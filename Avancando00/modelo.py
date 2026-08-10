@@ -62,9 +62,8 @@ class Playlist():
     def listagem(self):
         return self._elementos
     
-    @property
-    def tamanho(self):
-        return len(self._elementos)
+    def __getitem__(self, item):
+        return self.elementos[item]
 
 #Series
 The_Boys = Series("The Boys", 2019, 5)
@@ -108,10 +107,23 @@ Homem_Aranha.curtida()
 filmes_series = [A_Odisseia, Homem_Aranha, The_Boys, Supernatural]
 plFim_de_semana = Playlist("Fim de Semana", filmes_series)
 
-print(f"Tamanho da Lista: {len(plFim_de_semana)}")
+#print(f"Tamanho da Lista: {len(plFim_de_semana)}")
 print(f"Está na Lista?{A_Odisseia in plFim_de_semana}")
+print(f"Posição: {plFim_de_semana[2]}")
 
-for programas in plFim_de_semana:
-    print(programas)
+#for programas in plFim_de_semana:
+    #print(programas)
 
 #nomePl = Nome da Playlist
+
+#Python Data Model
+#Inicialização: __init__
+#Representação: __str__,__repr__
+#Container/Sequência: __contains__,__iter__,__len__,__getitem__
+#Numéricas: __add__,__sub__,__mul__,__mod__
+
+#Python Data Model, Exemplos
+#Inicialização: objeto = Novo()
+#Representação: print(objeto),str(objeto),repr(objeto)
+#Container/Sequência: len(objeto),item in Objeto, for in objeto, objeto[2:3]
+#Numéricas: objeto+outro_objeto, obj*obj
